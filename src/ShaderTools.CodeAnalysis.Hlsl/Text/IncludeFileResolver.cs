@@ -97,8 +97,9 @@ namespace ShaderTools.CodeAnalysis.Hlsl.Text
             {
                 if (includeFilename.StartsWith(kvp.Key))
                 {
-                    var virtualDirectory = includeFilename.Substring(0, kvp.Key.Length);
-                    var remainingPath = includeFilename.Substring(virtualDirectory.Length + 1);
+                    string remainingPath = includeFilename.Substring(kvp.Key.Length);
+                    //var virtualDirectory = includeFilename.Substring(0, kvp.Key.Length);
+                    //var remainingPath = includeFilename.Substring(virtualDirectory.Length + 1);
                     return Path.Combine(kvp.Value, remainingPath);
                 }
             }
